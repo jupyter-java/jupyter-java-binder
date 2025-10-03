@@ -1,0 +1,18 @@
+# Install JBang
+curl -Ls https://sh.jbang.dev | bash -s - app setup
+
+# Setup up path explicitly for accessing jbang directly
+export PATH=$HOME/.jbang/bin:$PATH
+
+# Trust jupyter-java so no prompting needed for kernels
+jbang trust add https://github.com/jupyter-java/
+
+# Install java kernel
+#jbang install-kernel@jupyter-java
+#jbang install-kernel@jupyter-java rapaio
+jbang install-kernel@jupyter-java jbang
+
+
+
+
+
