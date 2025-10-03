@@ -8,9 +8,9 @@ export PATH=$HOME/.jbang/bin:$PATH
 jbang trust add https://github.com/jupyter-java/
 
 # Install java kernel
-#jbang install-kernel@jupyter-java
-#jbang install-kernel@jupyter-java rapaio
-jbang install-kernel@jupyter-java jbang
+#jbang install-kernel@jupyter-java --java 25
+#jbang install-kernel@jupyter-java --java 25 rapaio
+jbang install-kernel@jupyter-java --java 25 jbang
 
 
 
