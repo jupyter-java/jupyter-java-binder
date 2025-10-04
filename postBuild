@@ -16,8 +16,4 @@ jbang trust add https://github.com/jupyter-java/
 
 ## install kernels
 jbang install-kernel@jupyter-java --java $JAVA_VERSION jbang
-jbang install-kernel@jupyter-java --java $JAVA_VERSION jjava
-jbang install-kernel@jupyter-java --java $JAVA_VERSION rapaio
-jbang install-kernel@jupyter-java --java $JAVA_VERSION kotlin
-jbang install-kernel@jupyter-java --java $JAVA_VERSION ijava
 ## end install kernels
