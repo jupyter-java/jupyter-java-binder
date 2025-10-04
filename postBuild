@@ -4,8 +4,12 @@
 # build and the launch time.
 JAVA_VERSION=25
 
+# only required to allow pulling content from an arbitrary repository
+# remove if you do not want this feature
+jupyter serverextension enable --py nbgitpuller --sys-prefix
+
 # Install JBang
-JBANG_DEFAULT_JAVA_VERSION=$JAVA_VERSION
+export JBANG_DEFAULT_JAVA_VERSION=$JAVA_VERSION
 curl -Ls https://sh.jbang.dev | bash -s - app setup
 
 # Setup up path explicitly for accessing jbang directly
