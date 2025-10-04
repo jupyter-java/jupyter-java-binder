@@ -1,0 +1,2 @@
+# nbgitpuller only required to allow pulling content from the repository
+nbgitpuller
