@@ -1,4 +1,11 @@
+# what java version to use for jbang and the kernels
+# you can make them different if you want
+# but we are defaulting to one version to speed up the 
+# build and the launch time.
+JAVA_VERSION=25
+
 # Install JBang
+JBANG_DEFAULT_JAVA_VERSION=$JAVA_VERSION
 curl -Ls https://sh.jbang.dev | bash -s - app setup
 
 # Setup up path explicitly for accessing jbang directly
@@ -7,18 +14,4 @@ export PATH=$HOME/.jbang/bin:$PATH
 # Trust jupyter-java so no prompting needed for kernels
 jbang trust add https://github.com/jupyter-java/
 
-# Install the known working java kernels
-jbang install-kernel@jupyter-java --java 25 jbang
-jbang install-kernel@jupyter-java --java 25 jjava
-jbang install-kernel@jupyter-java --java 25 rapaio
-jbang install-kernel@jupyter-java --java 25 kotlin
-jbang install-kernel@jupyter-java --java 25 ijava
-
-env  > env.txt
-git branch > branch.txt
-
-
-
-
-
-
+sh install-kernels.sh
