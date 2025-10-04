@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     # Only run on the original repository, not forks automatically
     if: github.repository == 'jupyter-java/jupyter-java-binder'
+    permissions:
+      contents: write
     strategy:
       matrix:
         kernel: [jbang, jjava, rapaio, kotlin, ijava]
