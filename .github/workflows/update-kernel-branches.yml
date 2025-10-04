@@ -8,6 +8,8 @@ on:
 jobs:
   update-branches:
     runs-on: ubuntu-latest
+    # Only run on the original repository, not forks automatically
+    if: github.repository == 'jupyter-java/jupyter-java-binder'
     strategy:
       matrix:
         kernel: [jbang, jjava, rapaio, kotlin, ijava]
@@ -27,12 +29,11 @@ jobs:
     - name: Update ${{ matrix.kernel }} branch
       run: |
         git checkout ${{ matrix.kernel }} 2>/dev/null || git checkout -b ${{ matrix.kernel }}
-        # Overwrite install-kernels.sh with kernel-specific installation
-        cat > install-kernels.sh << 'EOF'
-        ## Adjust the java version and kernels you want to have installed
-        : "${JAVA_VERSION:=25}"
-        jbang install-kernel@jupyter-java --java $JAVA_VERSION ${{ matrix.kernel }}
-        EOF
-        git add install-kernels.sh
+        # Replace install kernels section with kernel-specific installation
+        sed -i '/^## install kernels$/,/^## end install kernels$/c\
+        ## install kernels\
+        jbang install-kernel@jupyter-java --java $JAVA_VERSION ${{ matrix.kernel }}\
+        ## end install kernels' postBuild
+        git add postBuild
         git commit -m "Update ${{ matrix.kernel }} kernel installation" || echo "No changes to commit"
         git push origin ${{ matrix.kernel }}
