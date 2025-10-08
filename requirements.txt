@@ -1,2 +1,4 @@
 # nbgitpuller only required to allow pulling content from the repository
 nbgitpuller
+# Enables run .java/.jsh files via jbang in notebooks
+jbang-jupyter-runner
