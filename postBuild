@@ -8,9 +8,6 @@ JAVA_VERSION=25
 # remove if you do not want this feature
 jupyter server extension enable --py nbgitpuller --sys-prefix
 
-## Enables run .java/.jsh files via jbang in notebooks
-jupyter server extension enable --py jbang-jupyter-runner --sys-prefix
-
 # Install JBang
 export JBANG_DEFAULT_JAVA_VERSION=$JAVA_VERSION
 curl -Ls https://sh.jbang.dev | bash -s - app setup
