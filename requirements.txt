@@ -2,3 +2,8 @@
 nbgitpuller
 # Enables run .java/.jsh files via jbang in notebooks
 jbang-jupyter-runner
+# Enable git in jupyterlab
+jupyterlab-git
+
+# enable plotly in jupyterlab
+plotly
