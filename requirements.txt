@@ -7,3 +7,5 @@ jupyterlab-git
 
 # enable plotly in jupyterlab
 plotly
+plotly[express]
+
