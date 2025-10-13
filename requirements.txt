@@ -7,6 +7,7 @@ jupyterlab-git
 
 # Very optional - but let us inspect kernel communication for debugging
 jupyterlab-kernelspy
+
 # Lets us inspect variables in jupyterlab 
 lckr_jupyterlab_variableinspector
 
