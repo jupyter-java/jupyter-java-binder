@@ -43,7 +43,7 @@ jobs:
         # Replace install kernels section with kernel-specific installation
         sed -i '/^## install kernels$/,/^## end install kernels$/c\
         ## install kernels\
-        jbang install-kernel@jupyter-java --java $JAVA_VERSION ${{ matrix.kernel }}\
+        jbang install-kernel@jupyter-java --enable-preview --java $JAVA_VERSION ${{ matrix.kernel }}\
         ## end install kernels' postBuild
         
         # Commit changes if there are any

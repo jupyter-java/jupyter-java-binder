@@ -19,6 +19,6 @@ export PATH=$HOME/.jbang/bin:$PATH
 jbang trust add https://github.com/jupyter-java/
 
 ## install kernels
-jbang install-kernel@jupyter-java --java $JAVA_VERSION ijava
+jbang install-kernel@jupyter-java --enable-preview --java $JAVA_VERSION ijava
 ## end install kernels
 
